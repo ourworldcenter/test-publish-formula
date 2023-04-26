@@ -1,9 +1,11 @@
 {
   "name": "test-publish-formula",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
+  "bin": "bin/test-hello",
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "build": "tsc && ncc build build/index.js && pkg dist/index.js --targets macos --output bin/test-hello && tar -cvzf ./bin/test-hello.tar.gz ./bin/test-hello"
   },
   "keywords": [],
   "author": "",
